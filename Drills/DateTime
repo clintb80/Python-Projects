@@ -1,0 +1,38 @@
+import datetime
+
+
+def main():
+
+    def isOpen(hour):
+        if hour >= 9 and hour <= 21:
+            print 'Open'
+        
+        else:
+            print 'Closed'
+
+    pdx = datetime.datetime.now()
+    nyc = datetime.timedelta(hours = 3)
+    lon = datetime.timedelta(hours = 8)
+
+    pdxHour = getattr(pdx, 'hour')
+    nycHour = getattr((pdx + nyc), 'hour')
+    lonHour = getattr((pdx + lon), 'hour')
+
+    print '\nThe current time in Portland is:'
+    print pdx.ctime()
+    print 'The Portland office is now: '
+    isOpen(pdxHour)
+
+
+    print '\nThe current time in New York City is:'
+    print pdx + nyc
+    print 'The New York office is now: '
+    isOpen(nycHour)
+
+    print '\nThe current time in London is:'
+    print pdx + lon
+    print 'The London office is now: '
+    isOpen(lonHour)
+
+
+if __name__ == "__main__": main()
