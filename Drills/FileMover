@@ -1,0 +1,11 @@
+import shutil
+import os
+
+dir_src = "C:\Users\Clint\Desktop\FolderA"
+dir_dst = "C:\Users\Clint\Desktop\FolderB"
+
+for file in os.listdir(dir_src):
+    print file  
+    src_file = os.path.join(dir_src, file)
+    dst_file = os.path.join(dir_dst, file)
+    shutil.move(src_file, dst_file)
